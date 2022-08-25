@@ -1,8 +1,13 @@
 @extends('layouts.ajax')
 
 @section('content')
+@php
+    $api_url_1 = "http://api-sister.herokuapp.com/api/v1/";
+    $api_url_2 = "http://api-sister.herokuapp.com/api/v1/";
+@endphp
+
 <button class="btn btn-primary mb-3" id="create">Tambah</button>
-<table class="table table-bordered table-striped" id="dataTable" width="100%" data-url="http://192.168.0.6:8000/api/v1/employee">
+<table class="table table-bordered table-striped" id="dataTable" width="100%" data-url="{{ $api_url_1 }}employee">
     <thead>
         <th>No.</th>
         <th>Nama</th>

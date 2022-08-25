@@ -35,7 +35,7 @@ initTable('#dataTable', [
         mRender: (data) => {
             return `
                 <button class="btn btn-outline-primary update" data-id="${data}">Edit</button>
-                <button class="btn btn-outline-danger" data-toggle="delete" data-id="${data}">Hapus</button>
+                <button class="btn btn-outline-danger" data-toggle="delete" data-url="${$('meta[name="api-url-1"]').attr('content')}${data}/employee">Hapus</button>
             `
         }
     }
@@ -46,7 +46,7 @@ initTable('#dataTable', [
         var id = $(this).data('id')
         $(this).html('Loading...').attr('disabled', 'disabled')
 
-        const resEmployeeType = await fetch('http://192.168.0.6:8000/api/v1/employee-type')
+        const resEmployeeType = await fetch(`${$('meta[name="api-url-1"]').attr('content')}employee-type`)
         var { data } = await resEmployeeType.json()
         var options = data.map(val => `<option value="${val.id}">${val.name}</option>`)
         $('#myModal').find('select[name="employee_type_id"]').html(options)
@@ -58,7 +58,7 @@ initTable('#dataTable', [
             var { data } = await res.json()
 
             $('#myModal').find('.modal-title').html('Edit Dosen')
-            $('#myModal').find('form').attr('action', `http://192.168.0.6:8000/api/v1/${id}/employee`)
+            $('#myModal').find('form').attr('action', `${$('meta[name="api-url-1"]').attr('content')}${id}/employee`)
             // $('#myModal').find('form').attr('method', 'post')
             $('#myModal').find('select[name="employee_type_id"]').val(data.employee_type_id)
             // $('#myModal').find('input[name="_method"]').val('patch')

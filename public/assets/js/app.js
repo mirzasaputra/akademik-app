@@ -39,9 +39,9 @@ const handleEvent = () => {
         if(confirm('Yaking ingin menghapus data?')) {
             var oldBtn = $(this).html()
             $(this).html('loading...').attr('disabled', 'disabled')
-            var id = $(this).data('id')
+            var url = $(this).data('url')
 
-            const res = await fetch(`${$('meta[name="api-url"]').attr('content')}${id}/employee`, {
+            const res = await fetch(url, {
                 method: 'delete',
                 headers: {
                     'accept': 'application/json',

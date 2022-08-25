@@ -14,7 +14,7 @@
                 <a href="" class="nav-link">Program Studi</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('employee') }}" class="nav-link">Dosen</a>
+                <a href="{{ route('employee') }}" class="nav-link" data-toggle="ajax">Dosen</a>
             </li>
         </ul>
     </div>
