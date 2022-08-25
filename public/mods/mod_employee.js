@@ -51,7 +51,7 @@ initTable('#dataTable', [
         var options = data.map(val => `<option value="${val.id}">${val.name}</option>`)
         $('#myModal').find('select[name="employee_type_id"]').html(options)
 
-        const res = await fetch(`${$('meta[name="api-url"]').attr('content')}${id}/employee`)
+        const res = await fetch(`${$('meta[name="api-url-1"]').attr('content')}${id}/employee`)
 
         $(this).html(oldBtn).removeAttr('disabled')
         if(res.status == 200) {
@@ -91,7 +91,7 @@ $('#create').unbind().on('click', async function(e) {
     var oldBtn = $(this).html()
     $(this).html('Loading...').attr('disabled', 'disabled')
 
-    const res = await fetch('http://192.168.0.6:8000/api/v1/employee-type')
+    const res = await fetch(`${$('meta[name="api-url-1"]').attr('content')}employee-type`)
     
     if(res.status == 200){
         var { data } = await res.json()
@@ -100,7 +100,7 @@ $('#create').unbind().on('click', async function(e) {
         // $('#myModal').find('input[name="_method"]').val('')
         $('#myModal').find('select[name="employee_type_id"]').html(options)
         $('#myModal').find('.modal-title').html('Tambah Dosen')
-        $('#myModal').find('form').attr('action', 'http://192.168.0.6:8000/api/v1/employee')
+        $('#myModal').find('form').attr('action', `${$('meta[name="api-url-1"]').attr('content')}employee`)
         $('#myModal').modal('show')
     } else {
         alert('Opps! terjadi kesalahan')

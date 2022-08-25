@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="api-url-1" content="http://api-sister.herokuapp.com/api/v1/">
-    <meta name="api-url-2" content="http://192.168.0.6:8000/api/v1/">
+    <meta name="api-url-2" content="http://192.168.247.47:4000/api/v1/">
     <title>{{ $title ?? 'Untitle Page' }} | Akademik App</title>
     
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
