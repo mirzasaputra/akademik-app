@@ -2,8 +2,8 @@
 
 @section('content')
 @php
-    $api_url_1 = "http://api-sister.herokuapp.com/api/v1/";
-    $api_url_2 = "http://api-sister.herokuapp.com/api/v1/";
+    $api_url_1 = "http://192.168.43.129:8000/api/v1/";
+    $api_url_2 = "http://192.168.43.37:8000/api/";
 @endphp
 
 <button class="btn btn-primary mb-3" id="create">Tambah</button>

@@ -2,16 +2,16 @@
     <div class="container">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="" class="nav-link">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="nav-link" data-toggle="ajax">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">Mahasiswa</a>
+                <a href="{{ route('student') }}" class="nav-link" data-toggle="ajax">Mahasiswa</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">Jurusan</a>
+                <a href="{{ route('major') }}" class="nav-link" data-toggle="ajax">Jurusan</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">Program Studi</a>
+                <a href="{{ route('study-program') }}" class="nav-link" data-toggle="ajax">Program Studi</a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('employee') }}" class="nav-link" data-toggle="ajax">Dosen</a>

@@ -37,3 +37,30 @@ Route::get('/employee', function() {
 
     return customView('employee.index', $data);
 })->name('employee');
+
+Route::get('/student', function() {
+    $data = [
+        'title' => 'Mahasiswa',
+        'mods' => 'student'
+    ];
+
+    return customView('student.index', $data);
+})->name('student');
+
+Route::get('/major', function() {
+    $data = [
+        'title' => 'Jurusan',
+        'mods' => 'major'
+    ];
+
+    return customView('major.index', $data);
+})->name('major');
+
+Route::get('/study-program', function() {
+    $data = [
+        'title' => 'Program Studi',
+        'mods' => 'study_program'
+    ];
+
+    return customView('study-program.index', $data);
+})->name('study-program');
